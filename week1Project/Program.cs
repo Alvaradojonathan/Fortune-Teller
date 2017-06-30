@@ -10,7 +10,7 @@ namespace week1Project
     {
         static void Main(string[] args)
         {
-
+            //test
             // Ask the user for input allowing them to quit.
             Console.WriteLine("Type \"Quit\" at any point to stop. Use any key to start.");
             string cont = Console.ReadLine();
