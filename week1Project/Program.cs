@@ -10,190 +10,122 @@ namespace week1Project
     {
         static void Main(string[] args)
         {
-            //test
             // Ask the user for input allowing them to quit.
-            Console.WriteLine("Type \"Quit\" at any point to stop. Use any key to start.");
+            Console.WriteLine("\t\t\t\t\"The Fortune Teller\"\n"
+                + "________________________________________________________________________________"
+                + "Press the Enter key to begin.\t\t\tType \"Quit\" to exit at any time."
+                + "________________________________________________________________________________");
+
             string cont = Console.ReadLine();
             string lowercont = cont.ToLower();
             if (lowercont == "quit")
-            {
-                Console.WriteLine("Nobody likes a quitter...");
-            }
-
+            { Console.WriteLine("Nobody likes a quitter..."); }
             else
             {
-                Console.WriteLine("What's your first name?");
+                Console.Write("Enter your first name:\t\t\t");
                 string firstName = Console.ReadLine();
                 string lowerFirstName = firstName.ToLower();
                 if (lowerFirstName == "quit")
-                {
-                    Console.WriteLine("Nobody likes a quitter...");
-                }
+                { Console.WriteLine("Nobody likes a quitter..."); }
                 else
                 {
-                    Console.WriteLine("What's your last name?");
+                    Console.Write("Enter your last name:\t\t\t");
                     string lastName = Console.ReadLine();
                     string lowerLastName = lastName.ToLower();
                     if (lowerLastName == "quit")
-                    {
-                        Console.WriteLine("Nobody likes a quitter...");
-                    }
+                    { Console.WriteLine("Nobody likes a quitter..."); }
                     else
                     {
-                        Console.WriteLine("How old are you?");
-                        int age = int.Parse(Console.ReadLine());
-                        if (age.ToString() == "quit")
-                        {
-                            Console.WriteLine("Nobody likes a quitter...");
-                        }
+                        Console.Write("Enter your age:\t\t\t\t");
+                        string age = Console.ReadLine();
+                        string lowerAge = age.ToLower();
+                        if (lowerAge == "quit")
+                        { Console.WriteLine("Nobody likes a quitter..."); }
                         else
                         {
-                            Console.WriteLine("What number month were you born? (e.g. 8 is for August)");
-                            int birthMonth = int.Parse(Console.ReadLine());
-                            if (birthMonth.ToString() == "quit")
-                            {
-                                Console.WriteLine("Nobody likes a quitter...");
-                            }
+                            Console.Write("Enter your two-digit birth month:\t");
+                            string birthMonth = Console.ReadLine();
+                            string lowerBirthMonth = birthMonth.ToLower();
+                            if (lowerBirthMonth == "quit")
+                            { Console.WriteLine("Nobody likes a quitter..."); }
                             else
                             {
-                                Console.WriteLine("How many siblings do you have?");
-                                int sibling = int.Parse(Console.ReadLine());
-                                if (sibling.ToString() == "quit")
-                                {
-                                    Console.WriteLine("Nobody likes a quitter...");
-                                }
+                                Console.Write("Enter the number of siblings you have:\t");
+                                string sibling = Console.ReadLine();
+                                string lowerSibling = sibling.ToLower();
+                                if (lowerSibling == "quit")
+                                { Console.WriteLine("Nobody likes a quitter..."); }
                                 else
                                 {
-                                    //Ask the user for input and provide help options
-                                    Console.WriteLine("What's your favorite ROYGBIV color?\n -Type \"Help\" if you don't know what ROYGBIV is.");
+                                    Console.Write("Enter your favorite ROYGBIV color:\t"
+                                        + "\nType \"Help\" for ROYGBIV options.\t");
                                     string roygbiv = Console.ReadLine();
                                     string lowerRoygbiv = roygbiv.ToLower();
                                     if (lowerRoygbiv == "quit")
-                                    {
-                                        Console.WriteLine("Nobody likes a quitter...");
-                                    }
+                                    { Console.WriteLine("Nobody likes a quitter..."); }
                                     else
                                     {
-                                        while (lowerRoygbiv == "help")
+                                        if (lowerRoygbiv == "help")
                                         {
-                                            switch (lowerRoygbiv)
-                                            {
-                                                case "help":
-                                                    {
-                                                        Console.WriteLine("ROYGBIV stands for Red, Orange, Yellow, Green, Blue, Indigo and Violet.");
-                                                        lowerRoygbiv = Console.ReadLine();
-                                                        break;
-                                                    }
-                                                default:
-                                                    {
-                                                        break;
-                                                    }
-                                            }
+                                            Console.Write("R - Red\nO - Orange\nY - Yellow\nG - Green\nB - Blue\nI - Indigo\nV - Violet"
+                                                + "\n\nEnter your favorite ROYGBIV color:\t");
+                                            lowerRoygbiv = Console.ReadLine();
                                         }
-                                        
                                             //Determining user fortune
                                             string retiringInYears;
                                             string vacationHome;
                                             string transportationMode;
                                             string moneyInBank;
 
-                                            if (age % 2 == 0)
-                                            {
-                                                retiringInYears = "20";
-                                            }
-                                            else
-                                            {
-                                                retiringInYears = "30";
-                                            }
+                                            if (int.Parse(age) % 2 == 0) { retiringInYears = "20"; }
+                                            else { retiringInYears = "30"; }
 
-                                            if (sibling == 0)
-                                            {
-                                                vacationHome = "Cancun";
-                                            }
-                                            else if (sibling == 1)
-                                            {
-                                                vacationHome = "Sydney";
-                                            }
-                                            else if (sibling == 2)
-                                            {
-                                                vacationHome = "California";
-                                            }
-                                            else if (sibling == 3)
-                                            {
-                                                vacationHome = "Put-In Bay";
-                                            }
-                                            else if (sibling < 0)
-                                            {
-                                                vacationHome = "Shopping Cart";
-                                            }
+                                            if (int.Parse(sibling) == 0)
+                                            { vacationHome = "Cancun"; }
+                                            else if (int.Parse(sibling) == 1)
+                                            { vacationHome = "Sydney"; }
+                                            else if (int.Parse(sibling) == 2)
+                                            { vacationHome = "California"; }
+                                            else if (int.Parse(sibling) == 3)
+                                            { vacationHome = "Put-In Bay"; }
+                                            else if (int.Parse(sibling) < 0)
+                                            { vacationHome = "Shopping Cart"; }
                                             else
-                                            {
-                                                vacationHome = "Washington";
-                                            }
+                                            { vacationHome = "Washington"; }
 
                                             switch (lowerRoygbiv)
                                             {
                                                 case "red":
-                                                    {
-                                                        transportationMode = "a car";
-                                                        break;
-                                                    }
+                                                    { transportationMode = "a car"; break; }
                                                 case "orange":
-                                                    {
-                                                        transportationMode = "a luxury car";
-                                                        break;
-                                                    }
+                                                    { transportationMode = "a luxury car"; break; }
                                                 case "yellow":
-                                                    {
-                                                        transportationMode = "a helicopter";
-                                                        break;
-                                                    }
+                                                    { transportationMode = "a helicopter"; break; }
                                                 case "green":
-                                                    {
-                                                        transportationMode = "a flying luxury car";
-                                                        break;
-                                                    }
+                                                    { transportationMode = "a flying luxury car"; break; }
                                                 case "blue":
-                                                    {
-                                                        transportationMode = "a boat";
-                                                        break;
-                                                    }
+                                                    { transportationMode = "a boat"; break; }
                                                 case "indigo":
-                                                    {
-                                                        transportationMode = "a submarine";
-                                                        break;
-                                                    }
+                                                    { transportationMode = "a submarine"; break; }
                                                 case "violet":
-                                                    {
-                                                        transportationMode = "a rocket";
-                                                        break;
-                                                    }
+                                                    { transportationMode = "a scooter"; break; }
                                                 default:
-                                                    {
-                                                        transportationMode = "nothing";
-                                                        break;
-                                                    }
+                                                    { transportationMode = "nothing"; break; }
                                             }
 
-                                            if (birthMonth >= 1 && birthMonth <= 4)
-                                            {
-                                                moneyInBank = "$1,000,001.98";
-                                            }
-                                            else if (birthMonth >= 5 && birthMonth <= 8)
-                                            {
-                                                moneyInBank = "$6,865,444.07";
-                                            }
-                                            else if (birthMonth >= 9 && birthMonth <= 12)
-                                            {
-                                                moneyInBank = "$3,500,067.63";
-                                            }
+                                            if (int.Parse(birthMonth) >= 1 && int.Parse(birthMonth) <= 4)
+                                            { moneyInBank = "$1,000,001.98"; }
+                                            else if (int.Parse(birthMonth) >= 5 && int.Parse(birthMonth) <= 8)
+                                            { moneyInBank = "$6,865,444.07"; }
+                                            else if (int.Parse(birthMonth) >= 9 && int.Parse(birthMonth) <= 12)
+                                            { moneyInBank = "$3,500,067.63"; }
                                             else
-                                            {
-                                                moneyInBank = "$0.00";
-                                            }
+                                            { moneyInBank = "$0.00"; }
 
                                             //Printing out the users fortune
-                                            Console.WriteLine("{0} {1} will retire in {2} years with {3} in the bank,\na vacation home in {4} and {5} for transportation.", firstName, lastName, retiringInYears, moneyInBank, vacationHome, transportationMode);
+                                            Console.WriteLine("\n\t\t\t\t\"The Fortune\"\n\n{0} {1} will retire in {2} years with {3} "
+                                                + "in the bank,\na vacation home in {4} and {5} for transportation.\n",
+                                                firstName, lastName, retiringInYears, moneyInBank, vacationHome, transportationMode);
 
                                         }
 
